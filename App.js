@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { TextInput } from "react-native";
+import { useSharedValue } from "react-native-reanimated";
 
 export default function App() {
+  const value = useSharedValue(0);
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <TextInput
+      style={{
+        height: 40,
+        margin: 50,
+        borderWidth: 1,
+        padding: 10,
+      }}
+      role={undefined}
+      keyboardType="decimal-pad"
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
